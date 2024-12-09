@@ -1,0 +1,46 @@
+#
+# nek parameter file
+#
+[GENERAL] 
+polynomialOrder = 5
+PnPnFormulation = yes
+minNumProcesses = 8
+
+#startFrom = restart.fld time=0 
+stopAt = endTime
+endTime = 400
+
+dt = 0
+timeStepper = bdf3
+# extrapolation = OIFS
+variableDt = yes
+targetCFL = .5
+
+writeControl = timeStep
+writeInterval = 1
+
+userParam01 = 200    # start time collecting statistics
+userParam02 = 20     # writeInterval 1D statistics 
+
+filtering = hpfrt
+filterWeight = 0.0
+filterCutoffRatio = 1.0
+
+[PROBLEMTYPE]
+#variableProperties = yes
+equation = incompNS
+
+[PRESSURE]
+#preconditioner = semg_xxt
+residualTol = 1e-3
+residualProj = no
+
+[VELOCITY]
+residualTol = 1e-4
+density = 1
+viscosity = -2800
+
+#[TEMPERATURE]
+#rhoCp = 1.
+#conductivity = -10000
+#residualTol = 1e-6 
