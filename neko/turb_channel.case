@@ -50,8 +50,8 @@
        //     }
        // ],
         "boundary_types": ["", "", "w", "w"],
-        "output_control": "tsteps",
-        "output_value": 1
+        "output_control": "simulationtime",
+        "output_value": 0.1
     },
  "simulation_components": 
   [ 

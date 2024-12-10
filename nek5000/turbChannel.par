@@ -16,8 +16,8 @@ timeStepper = bdf3
 variableDt = yes
 targetCFL = .5
 
-writeControl = timeStep
-writeInterval = 1
+writeControl = runtime
+writeInterval = 0.1
 
 userParam01 = 200    # start time collecting statistics
 userParam02 = 20     # writeInterval 1D statistics 
