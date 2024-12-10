@@ -130,14 +130,16 @@ c-----------------------------------------------------------------------
          IFTO      = .true.
          call veldiv(T)
 !     face averaging
-c#ifdef AMR
-c         call h1_proj(T,NX1,NY1,NZ1)
-c#else
-c         call dssum(T,NX1,NY1,NZ1)
-c         ntot = nx1*ny1*nz1*nelv
-c         call col2 (T,VMULT,ntot)
-c#endif
+      print *,'heyos strong',glsc2(T,bm1,n)
+#ifdef AMR
+         call h1_proj(T,NX1,NY1,NZ1)
+#else
+         call dssum(T,NX1,NY1,NZ1)
+         ntot = nx1*ny1*nz1*nelv
+         call col2 (T,VMULT,ntot)
+#endif
       endif
+      
 
 
 c      ubar = glsc2(vx,bm1,n)/volvm1
